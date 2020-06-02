@@ -1,0 +1,51 @@
+<%- include('../partials/header') %>
+
+  <h2>How are you feeling today?</h2>
+  <div class="checkboxes">
+    <form id="new-entry" action="/entries/index " method="POST">
+      <div class="checkbox-container"> 
+        <label class="checkbox-label">
+          <input type="checkbox" id="emotion1" name="moods" value="Sad">
+          <span class="checkbox-custom rectangular"></span>
+        </label>
+        <div class="input-title">SAD</div>
+    </div>
+    <div class="checkbox-container"> 
+      <label class="checkbox-label">
+        <input type="checkbox" id="emotion1" name="moods" value="HAPPY">
+        <span class="checkbox-custom rectangular"></span>
+      </label>
+      <div class="input-title">HAPPY</div>
+      <div class="checkbox-container"> 
+        <label class="checkbox-label">
+          <input type="checkbox" id="emotion1" name="moods" value="ANXIOUS">
+          <span class="checkbox-custom rectangular"></span>
+        </label>
+        <div class="input-title">ANXIOUS</div>
+        <div class="checkbox-container"> 
+          <label class="checkbox-label">
+            <input type="checkbox" id="emotion1" name="moods" value="Motivated">
+            <span class="checkbox-custom rectangular"></span>
+          </label>
+          <div class="input-title">MOTIVATED</div>
+          <div class="checkbox-container"> 
+            <label class="checkbox-label">
+              <input type="checkbox" id="emotion1" name="moods" value="Stressed">
+              <span class="checkbox-custom rectangular"></span>
+            </label>
+            <div class="input-title">STRESSED</div>
+            <div class="checkbox-container"> 
+              <label class="checkbox-label">
+                <input type="checkbox" id="emotion1" name="moods" value="Overwhelmed">
+                <span class="checkbox-custom rectangular"></span>
+              </label>
+              <div class="input-title">OVERWHELMED</div>
+  </div>
+    <p>Journal about the day</p>
+    <input type="text" name="note">
+    <input type="submit" value="Add Entry">
+    <a href="/entries/moods">Add Another Emotion</a>
+  </form>
+
+
+  <%- include('../partials/footer') %>

@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+    <h1>USER PROFILE</h1>
+    <tbody>
+        <% if (user) { %>
+        <% entries.forEach(function(e) { %>
+            <div class="card">
+            <tr>
+               <% e.moods.forEach(function(m) { %>
+                <td><%= m.mood %></td>
+               <% }) %>
+            </tr>
+            <tr>
+            <%= e.notes %> 
+            </tr>
+            </div>
+       <% })}; %>
+    </tbody>
+
+<%- include('../partials/footer') %>

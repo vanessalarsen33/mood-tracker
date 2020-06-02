@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="/entries/new" >NEW ENTRY</a>
+        <a href="/entries/index">VIEW ENTRIES </a>
+    <% if (user) { %>
+        <a href="/logout">LOGOUT</a>
+      <% } else { %>
+        <a href="/auth/google">LOGIN</a>
+      <% } %>
+    </nav>  
+
+    <h1>Welcome to Mood Tracker home page.<br>Login to start tracking your emotions</h1>
+</body>
+</html>
