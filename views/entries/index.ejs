@@ -5,13 +5,14 @@
         <% if (user) { %>
         <% entries.forEach(function(e) { %>
             <div class="card">
-            <tr>
+            <tr> <h4>Today I felt:</h4>
                <% e.moods.forEach(function(m) { %>
                 <td><%= m.mood %></td>
                <% }) %>
             </tr>
-            <tr>
-            <%= e.notes %> 
+            <tr><br><br>
+            <%= e.note %> 
+            <button id="editBtn">Edit</button>
             </tr>
             </div>
        <% })}; %>

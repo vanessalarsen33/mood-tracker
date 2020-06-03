@@ -1,19 +1,66 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: peru;
-  color: white
+  color: white;
+  margin: 0;
+}
+.jumbotron {
+  margin: 0;
+  padding: 0;
+  background-color: white;
 }
 
+a {
+  background-color: peru;
+  text-decoration: none;
+  color: white;
+  padding: 8px;
+}
+
+nav {
+  background-color: white;
+  height: 50px;
+  justify-content: space-evenly;
+  display: flex;
+  padding: 10px;
+}
+
+h1 {
+  justify-content: center;
+  display: flex;
+  background-color: white;
+  color: peru;
+  margin-left: 35vh;
+  margin-right: 35vh;
+  margin-top: 20vh;
+  padding: 30px;
+}
+
+.homepage-btn {
+  justify-content: center;
+  display: flex;
+  background-color: white;
+  margin-left: 47%;
+  margin-right: 47%;
+  color: peru;
+  margin-top: 5%;
+  font-size: 2vh;
+}
 
 .card {
   width: 500px;
   margin: 50px auto;
-  clear: both;
   display: block;
-  padding: 0px 0px;
-  background-color: #009BFF;
+  padding: 15px 20px;
+  background-color:white;
+  color: peru;
   border-radius: 4px;
+}
+#editBtn {
+  background-color: white;
+  border: peru solid 1px;
+  color: peru;
+  margin: 20px;
 }
 .input-title {
   clear: both;
@@ -26,7 +73,7 @@ body {
   display: block;
   content: "";
 }
-.card .checkbox-container {
+.card .checkbox {
   float: left;
   width: 50%;
   box-sizing: border-box;
@@ -109,4 +156,12 @@ body {
   border-width: 0 2px 2px 0;
   background-color: transparent;
   border-radius: 0;
+}
+.checkbox {
+  margin-left: 50px;
+}
+h2 {
+  justify-content: center;
+  display: flex;
+  margin-top: 40px;
 }

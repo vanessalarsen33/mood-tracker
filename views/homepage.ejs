@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Document</title>
 </head>
 <body>
-    <nav>
-        <a href="/entries/new" >NEW ENTRY</a>
-        <a href="/entries/index">VIEW ENTRIES </a>
+  <nav>
     <% if (user) { %>
-        <a href="/logout">LOGOUT</a>
-      <% } else { %>
-        <a href="/auth/google">LOGIN</a>
+      <a class="button" href="/logout" role="button">Login</a>
+    <% } else { %>
+      <a class="button" href="/auth/google">LOGIN</a>
+    <% } %>
+  <div class="jumbotron">
+    <h1 class="display-4">Hello, you!</h1>
+    <p class="lead">Welcome to NAME! We have made a simple way for you to track how you feel and be able to express you feeling..</p>
+    <hr class="my-4">
+    <p>some more things about the app. blah abl bla blaj .</p>
+    <% if (user) { %>
+      <a class="btn btn-primary btn-lg" href="/logout" role="button">Login</a>
+    <% } else { %>
+      <a class="btn btn-primary btn-lg" href="/auth/google">LOGIN</a>
       <% } %>
-    </nav>  
-
-    <h1>Welcome to Mood Tracker home page.<br>Login to start tracking your emotions</h1>
+    </div>
 </body>
 </html>
