@@ -1,21 +1,30 @@
 <%- include('../partials/header') %>
-
-    <h1>USER PROFILE</h1>
+    <div class="profileheader">
+        <span class="profile-title">
+            <% if(user.avatar) { %>
+                <img width="50" class="profile-img" src="<%= user.avatar %>">
+            <% } else { %>
+            <i class="small material-icons">perm_identity</i>
+            <% } %>
+        <span class="profile"><%= user.name %></span>
+    </div>
     <tbody>
-        <% if (user) { %>
-        <% entries.forEach(function(e) { %>
-            <div class="card">
-            <tr> <h4>Today I felt:</h4>
-               <% e.moods.forEach(function(m) { %>
+      <% if (user) { %>
+      <% entries.forEach(function(e) { %>
+        <div class="card">
+            <tr> <h4>DATE</h4>
+                <td>Today I felt:</td>
+                <% e.moods.forEach(function(m) { %>
                 <td><%= m.mood %></td>
-               <% }) %>
-            </tr>
-            <tr><br><br>
-            <%= e.note %> 
-            <button id="editBtn">Edit</button>
-            </tr>
-            </div>
-       <% })}; %>
+                <% }) %>
+            </tr><br><br>
+            <tr> 
+                <td>Notes about the day: <%= e.note %></td>
+            </tr><br><br>
+            <button id="editBtn">Edit Entry</button>
+            <button id="deleteBtn">Delete Entry</button>
+        </div>
+        <% })}; %>
     </tbody>
 
 <%- include('../partials/footer') %>

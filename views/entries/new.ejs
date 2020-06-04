@@ -1,19 +1,19 @@
 <%- include('../partials/header') %>
 
   <h2>How are you feeling today?</h2>
-  
+
     <form id="new-entry" action="/entries/index " method="POST">
       <div class="checkboxes">
         <div class="checkbox">
           <label class="checkbox-label">
-            <input type="checkbox" id="emotion1" name="moods" value="HAPPY">
+            <input type="checkbox" id="emotion1" name="moods" value="Happy">
             <span class="checkbox-custom rectangular"></span>
           </label>
           <div class="input-title">HAPPY</div>
         </div>
         <div class="checkbox"> 
           <label class="checkbox-label">
-            <input type="checkbox" id="emotion1" name="moods" value="ANXIOUS">
+            <input type="checkbox" id="emotion1" name="moods" value="Anxious">
             <span class="checkbox-custom rectangular"></span>
           </label>
           <div class="input-title">ANXIOUS</div>
@@ -46,12 +46,49 @@
           </label>
           <div class="input-title">SAD</div>
         </div>
+      <%if (customMoods.length) { %>
+        <% customMoods.forEach(function(m) { %>
+          <div class="checkbox"> 
+            <label class="checkbox-label">
+              <input type="checkbox" id="emotion1" name="addMoods" value="<%= m.mood %>">
+              <span class="checkbox-custom rectangular"></span>
+            </label>
+            <div class="input-title"><%= m.mood %></div>
+          </div>
+        <% }); %> 
+      <% } %>
       </div>
-      
       <h3>Journal about the day</h3>
-      <input type="text" name="note">
-      <input type="submit" value="Add Entry">
-      <a href="../moods/new">Add Another Emotion</a>
+      <div class="journal-form">
+        <input class="journal" type="text" name="note">
+        <input class="form-btn" type="submit" value="Sumbit Entry">
+      </div>
     </form>
-
+    <!-- <a href="../moods/new">Add Another Emotion</a> -->
+    <button type="button" class="modal-btn" data-toggle="modal" data-target="#exampleModal">Add Mood</button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="/moods" method="POST">
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Message:</label>
+                  <input class="form-control" id="message-text" name="mood">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
   <%- include('../partials/footer') %>

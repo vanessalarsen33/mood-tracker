@@ -5,8 +5,15 @@ body {
   margin: 0;
 }
 .jumbotron {
-  margin: 0;
+  margin: 0 4.8em 0;
   padding: 0;
+  background-color: white;
+}
+.btn-primary {
+  justify-content: center;
+  display: flex;
+  width: 10%;
+  color: peru;
   background-color: white;
 }
 
@@ -56,12 +63,13 @@ h1 {
   color: peru;
   border-radius: 4px;
 }
-#editBtn {
+button {
   background-color: white;
   border: peru solid 1px;
   color: peru;
   margin: 20px;
 }
+
 .input-title {
   clear: both;
   padding: 5px 0px 20px 0px;
@@ -162,7 +170,55 @@ h1 {
   display: flex;
   justify-content: space-evenly;
 }
+h3 {
+  justify-content: center;
+  display: flex;
+  margin: 5% 0 3%;
+}
 h2 {
   justify-content: center;
   display: flex;
+  margin-top: 5%;
+}
+
+.form-btn {
+  background-color: white;
+  text-decoration: none;
+  color: peru;
+  padding: 8px;
+  border: solid;
+  height: 4%;
+
+}
+.journal {
+  height: 12vh;
+  width: 20em;
+  border: solid 2px white;
+}
+.journal-form {
+  display: flex;
+  justify-content: center;
+}
+.profile {
+  margin-top: 8vh;
+  font-size: 1.8em;
+}
+.profileheader {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: peru;
+  padding: 2%;
+  margin: 5% 31%;
+}
+.profile-img {
+  border-radius: 50%;
+}
+.modal-btn {
+  background-color: white;
+  text-decoration: none;
+  color: peru;
+  padding: 8px;
+  border: solid;
+  height: 4%;
 }

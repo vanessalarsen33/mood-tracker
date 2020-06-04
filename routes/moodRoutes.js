@@ -2,9 +2,7 @@ const express = require('express');
 const router = express.Router();
 const moodsCtrl = require('../controllers/moodController');
 
-/* GET /entries/new listing. */
-// router.get('/', isLoggedIn, moodsCtrl.index);
-router.get('/new', isLoggedIn, moodsCtrl.newMood);
+router.post('/', isLoggedIn, moodsCtrl.createMood);
 // router.post('/index',isLoggedIn, moodsCtrl.createMood);
 
 

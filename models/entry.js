@@ -10,6 +10,9 @@ const moodSchema = new mongoose.Schema({
 
 const entrySchema = new Schema({
     moods:[moodSchema],
+    addMoods: [{
+
+    }],
     note: String,
     user: {
         type: Schema.Types.ObjectId,
