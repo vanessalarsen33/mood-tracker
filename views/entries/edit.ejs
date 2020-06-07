@@ -1,0 +1,10 @@
+<%- include('../partials/header') %>
+
+<form action="/entries/<%= entry._id %>?_method=PUT" method="POST">
+    <input type="field"  name="note" placeholder="<%= entry.note %>" value="<%= entry.note %>"><br>
+    <input type="text" placeholder="<%= entry.mood %>" value="<%= entry.mood %>"><br>
+    <input type="submit" value="Update Entry">
+</form>
+
+
+<%- include('../partials/footer') %>

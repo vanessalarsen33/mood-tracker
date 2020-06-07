@@ -1,30 +1,66 @@
 <%- include('../partials/header') %>
-    <div class="profileheader">
-        <span class="profile-title">
-            <% if(user.avatar) { %>
-                <img width="50" class="profile-img" src="<%= user.avatar %>">
-            <% } else { %>
-            <i class="small material-icons">perm_identity</i>
-            <% } %>
-        <span class="profile"><%= user.name %></span>
+<div class="profileheader">
+  <span class="profile-title">
+    <span class="profile"><%= user.name %></span>
+    <% if(user.avatar) { %>
+    <img width="50" class="profile-img" src="<%= user.avatar %>">
+    <% } else { %>
+    <i class="small material-icons">perm_identity</i>
+    <% } %>
+</div>
+<tbody>
+  <% if (user) { %>
+  <% entries.forEach(function(e) { %>
+  <div class="card">
+    <tr>
+      <h4 class="today">DATE</h4>
+      <h5>Today I felt:</h5>
+      <% e.moods.forEach(function(m) { %>
+      <td><%= m.mood %></td>
+    </tr><br><br>
+    <tr>
+      <% }) %>
+      <h5>A few of my thoughts:</h5>
+      <td><%= e.note %></td>
+    </tr><br>
+    <div class="entryBtns">
+      <a href='/entries/<%= e._id %>/edit' type="submit" id="editBtn">Edit Entry</a> 
+      <form action="/entries/<%= e._id %>?_method=DELETE" method="POST"><br>
+      <input id="deleteBtn" type="submit" value="DELETE">
+      </form>
     </div>
-    <tbody>
-      <% if (user) { %>
-      <% entries.forEach(function(e) { %>
-        <div class="card">
-            <tr> <h4>DATE</h4>
-                <td>Today I felt:</td>
-                <% e.moods.forEach(function(m) { %>
-                <td><%= m.mood %></td>
-                <% }) %>
-            </tr><br><br>
-            <tr> 
-                <td>Notes about the day: <%= e.note %></td>
-            </tr><br><br>
-            <button id="editBtn">Edit Entry</button>
-            <button id="deleteBtn">Delete Entry</button>
-        </div>
-        <% })}; %>
-    </tbody>
+  </div>
+  <% })}; %>
+</tbody>
+
+    <!-- <button type="button" class="modal-btn" data-toggle="modal" data-target="#exampleModal">EDIT</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="/entries//edit" method="GET">
+                      <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <input class="form-control" id="message-text" name="mood">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add</button>
+                  </div>
+                </div>
+              </div> -->
+    <!-- </div> -->
+
+
+
 
 <%- include('../partials/footer') %>
