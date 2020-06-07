@@ -9,7 +9,7 @@ router.get('/new', isLoggedIn, entriesCtrl.newEntry);
 router.post('/index',isLoggedIn, entriesCtrl.createEntry);
 router.delete('/:id', isLoggedIn, entriesCtrl.deleteEntry);
 router.get('/:id/edit', isLoggedIn, entriesCtrl.editForm);
-router.put('/index', isLoggedIn, entriesCtrl.updateEntry);
+router.put('/:id', isLoggedIn, entriesCtrl.updateEntry);
 
 function isLoggedIn(req, res, next) {
     if(req.isAuthenticated()) return next();
