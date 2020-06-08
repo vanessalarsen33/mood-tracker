@@ -10,10 +10,10 @@ const moodSchema = new mongoose.Schema({
 
 const entrySchema = new Schema({
     moods:[moodSchema],
-    mood: {
+    customMoods: [{
         type: Schema.Types.ObjectId,
         ref: 'Mood'
-    },
+    }],
     note: String,
     sleep: Number,
     user: {

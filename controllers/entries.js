@@ -13,13 +13,20 @@ module.exports = {
 
 function createEntry(req, res) {
   req.body.user = req.user
-  console.log(req.body.sleep)
-  if (typeof req.body.moods !== 'string') {
+  console.log(req.body.moods)
+  if (typeof req.body.moods !== 'string' && req.body.moods) {
     req.body.moods = req.body.moods.map(function (mood) {
       return {
         mood: mood
       }
     })
+  } else {
+    req.body.moods = [{
+      mood: req.body.moods
+    }]
+  }
+  if (typeof req.body.customMoods !== 'object') {
+    req.body.customMoods = [req.body.customMoods]
   }
   const entry = new Entry(req.body);
   entry.note = req.body.note
@@ -36,11 +43,8 @@ function deleteEntry(req, res) {
 }
 
 function index(req, res) {
-  Mood.find({ user: req.user }, function (err, mood) {
-    // console.log(mood, "HEEEEERRREEEE")
-  });
   console.log(req.body.mood);
-  Entry.find({ user: req.user }, function (err, entries) {
+  Entry.find({ user: req.user }).populate('customMoods').exec( function (err, entries) {
     res.render('entries/index', {
       title: 'All Entries',
       entries

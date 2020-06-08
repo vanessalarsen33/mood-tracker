@@ -15,13 +15,18 @@
     <tr>
       <h4 class="today"><%= e.createdAt.toLocaleDateString() %></h4>
       <h5>Today I felt:</h5>
+      <td>
       <% e.moods.forEach(function(m) { %>
-      <td><%= m.mood %></td>
+      <%= m.mood %>
+      <% }) %>
+      <% e.customMoods.forEach(function(m) { %>
+      <%= m.mood %>
+      <% }) %>
+      </td>
     </tr>
     <tr>
-      <% }) %>
       <h5>How you slept:</h5>
-      <p><%= e.sleep %></p>
+      <p><%= e.sleep %> out of 10</p>
       <h5>A few of my thoughts:</h5>
       <td><%= e.note %></td>
     </tr>

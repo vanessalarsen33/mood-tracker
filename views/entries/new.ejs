@@ -50,7 +50,7 @@
     <% customMoods.forEach(function(m) { %>
       <div class="checkbox col-md-3 col-sm-6">
         <label class="checkbox-label">
-        <input type="checkbox" id="emotion1" name="addMoods" value="<%= m.mood %>">
+        <input type="checkbox" id="emotion1" name="customMoods" value="<%= m._id %>">
         <span class="checkbox-custom rectangular"></span>
       </label>
       <div class="input-title"><%= m.mood %></div>
@@ -65,7 +65,7 @@
     <p>Good</p>
   </div>
   <div class="slidecontainer">
-    <input type="range" min="1" max="100" value="50" class="slider" id="myRange" name="sleep">
+    <input type="range" min="1" max="10" value="5" class="slider" id="myRange" name="sleep">
   </div>
   <h3>Journal about your day</h3>
   <div class="journal-form">
@@ -97,7 +97,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <input type="button" class="btn btn-primary" value="Add">
+          <input type="submit" class="btn btn-primary" value="Add">
         </form>
       </div>
     </div>
