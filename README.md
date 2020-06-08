@@ -1,5 +1,8 @@
 # Mood Tracker
 
+![logo](/images/logo.png)
+
+
 This is app is a way that you can track your feeling and put notes in about your day. An easy way to be able to see trends on how you are feeling. 
 
 ## Screenshots
@@ -28,3 +31,5 @@ Trello planning [board](https://trello.com/b/jabDID3l/mood-app)
 - Add scale tracker for each mood.
 - Update CSS
 - UI with sleep scale
+- Moblie friendly
+- Add moods to update modal
