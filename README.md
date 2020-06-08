@@ -3,7 +3,7 @@
 <img src="/images/logo.png" width=300 text-align=center/>
 
 
-This is app is a way that you can track your feeling and put notes in about your day. An easy way to be able to see trends on how you are feeling. 
+This is app is a way that you can track your feeling and put notes in about your day. Understanding your moods helps you manage them and feel better faster. If you are more aware of your moods, you may be able to better manage your lifestyle choices, make informed health decisions, prevent or avoid triggers of negative moods, and work towards a better quality of life.
 
 ## Screenshots
 
