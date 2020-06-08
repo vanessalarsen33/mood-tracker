@@ -65,6 +65,7 @@ h1 {
   flex-basis: 100%;
   margin: 2%;
   padding: 2%;
+  border: double;
 }
 
 .entryCard {
@@ -213,7 +214,6 @@ h2 {
 .journal {
   height: 18vh;
   width: 30em;
-  border: solid 2px #F7E1D7;
 }
 
 .journal-form {
@@ -221,8 +221,10 @@ text-align: center;
 }
 
 .profile {
-  margin-top: 8vh;
-  font-size: 1.8em;
+  margin-top: 2vh;
+  font-size: 2.2em;
+  display: flex;
+  text-align: end;
 }
 
 .profileheader {
@@ -230,12 +232,14 @@ text-align: center;
   justify-content: center;
   background-color: #F7E1D7;
   color: #93A8AC;
-  padding: 2%;
-  margin: 5% 31%;
+  padding: 1.5%;
+  margin: 4% 41.5% 2%;
 }
 
 .profile-img {
-  border-radius: 50%;
+  border: solid 3px grey;
+  display: flex;
+  align-items: flex-end;
 }
 
 .modal-btn {
@@ -330,7 +334,8 @@ h5 {
   border-color: #F7E1D7;
 }
 .entryTitle {
-  margin-top: 1vh;
-  margin-left: 35%;
-  margin-right: 35%;
+  margin-top: 0vh;
+  margin-left: 43%;
+  margin-right: 43%;
+  font-size: 45px;
 }

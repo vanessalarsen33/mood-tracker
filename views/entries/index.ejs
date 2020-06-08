@@ -1,12 +1,12 @@
 <%- include('../partials/header') %>
 <div class="profileheader">
   <span class="profile-title">
-    <span class="profile"><%= user.name %></span>
     <% if(user.avatar) { %>
-    <img width="50" class="profile-img" src="<%= user.avatar %>">
-    <% } else { %>
-    <i class="small material-icons">perm_identity</i>
-    <% } %>
+      <img width="50" class="profile-img" src="<%= user.avatar %>">
+      <% } else { %>
+        <i class="small material-icons">perm_identity</i>
+        <% } %>
+        <span class="profile"><%= user.name %></span>
 </div>
 <div class="entryCard">
   <% if (user) { %>
