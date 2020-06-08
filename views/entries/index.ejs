@@ -2,11 +2,11 @@
 <div class="profileheader">
   <span class="profile-title">
     <% if(user.avatar) { %>
-      <img width="50" class="profile-img" src="<%= user.avatar %>">
+      <img class="profile-img" src="<%= user.avatar %>">
       <% } else { %>
         <i class="small material-icons">perm_identity</i>
-        <% } %>
-        <span class="profile"><%= user.name %></span>
+      <% } %>
+    <span class="profile"><%= user.name %></span>
 </div>
 <div class="entryCard">
   <% if (user) { %>
@@ -25,7 +25,7 @@
       </td>
     </tr>
     <tr>
-      <h5>How you slept:</h5>
+      <h5>How I slept:</h5>
       <p><%= e.sleep %> out of 10</p>
       <h5>A few of my thoughts:</h5>
       <td><%= e.note %></td>

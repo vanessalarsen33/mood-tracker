@@ -10,6 +10,7 @@ body {
   background-color: #93A8AC;
 }
 .btn-primary {
+  margin: 3% auto;
   justify-content: center;
   display: flex;
   width: 5em;
@@ -89,6 +90,7 @@ button {
   font-weight: 300;
   display: flex;
   justify-content: center;
+  text-transform: uppercase;
 }
 
 .card::after {
@@ -208,7 +210,7 @@ h2 {
   color: #93A8AC;
   padding: 8px;
   border: solid;
-  margin-top: 1%;
+  margin: 1%;
 }
 
 .journal {
@@ -220,11 +222,14 @@ h2 {
 text-align: center;
 }
 
-.profile {
-  margin-top: 2vh;
-  font-size: 2.2em;
+.profile-title {
   display: flex;
-  text-align: end;
+}
+
+.profile {
+  margin-top: 5vh;
+  font-size: 2.6em;
+  display: flex;
 }
 
 .profileheader {
@@ -232,14 +237,17 @@ text-align: center;
   justify-content: center;
   background-color: #F7E1D7;
   color: #93A8AC;
-  padding: 1.5%;
-  margin: 4% 41.5% 2%;
+  padding: .5%;
+  margin: 2% 40% 1%;
+  height: 219px;
+
 }
 
 .profile-img {
   border: solid 3px grey;
-  display: flex;
-  align-items: flex-end;
+  height: auto;
+  margin: auto 20px auto 10px;
+  width: 64px;
 }
 
 .modal-btn {
