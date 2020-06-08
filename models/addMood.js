@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 //short cut variable 
-const Schema = mongoose.Schema; 
+const Schema = mongoose.Schema;
 
 const addMoodSchema = new mongoose.Schema({
-     mood: String,
-     user: {
+    mood: String,
+    user: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     }

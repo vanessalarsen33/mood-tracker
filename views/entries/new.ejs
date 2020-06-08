@@ -48,8 +48,8 @@
     </div>
     <%if (customMoods.length) { %>
     <% customMoods.forEach(function(m) { %>
-      <div class="checkbox col-md-3 col-sm-6">
-        <label class="checkbox-label">
+    <div class="checkbox col-md-3 col-sm-6">
+      <label class="checkbox-label">
         <input type="checkbox" id="emotion1" name="customMoods" value="<%= m._id %>">
         <span class="checkbox-custom rectangular"></span>
       </label>
@@ -70,7 +70,7 @@
   <h3>Journal about your day</h3>
   <div class="journal-form">
     <div class>
-      <input class="journal" type="text" name="note">
+      <input class="journal" type="text" name="note" autocomplete="off">
     </div>
     <div>
       <input class="form-btn" type="submit" value="Sumbit Entry">
@@ -94,10 +94,10 @@
             <label for="message-text" class="col-form-label"></label>
             <input class="form-control" id="message-text" name="mood">
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <input type="submit" class="btn btn-primary" value="Add">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="Add">
         </form>
       </div>
     </div>

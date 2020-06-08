@@ -2,7 +2,7 @@
 <div class="profileheader">
   <span class="profile-title">
     <% if(user.avatar) { %>
-      <img class="profile-img" src="<%= user.avatar %>">
+      <img  class="profile-img" src="<%= user.avatar %>">
       <% } else { %>
         <i class="small material-icons">perm_identity</i>
       <% } %>
@@ -30,10 +30,11 @@
       <h5>A few of my thoughts:</h5>
       <td><%= e.note %></td>
     </tr>
-    <div class="entryBtns">
+<div class="entryBtns">
+  <form action="/entries/<%= e._id %>?_method=DELETE" method="POST">
+    <input id="deleteBtn" type="submit" value="DELETE">
+  </form>
       <button type="button" class="modal-btn" data-toggle="modal" data-target="#exampleModal">Update Journal</button>
-      <form action="/entries/<%= e._id %>?_method=DELETE" method="POST">
-        <input id="deleteBtn" type="submit" value="DELETE">
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -50,7 +51,6 @@
               </div>
             <div class="modal-footer">
           <input type="submit" value="Update Entry">
-      </form>
       </form>
     </div>
   </div>

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
   if (isLoggedIn === true) {
     res.redirect('entries/index')
   } else {
@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 });
 
 function isLoggedIn(req, res) {
-  if(req.isAuthenticated()) {
+  if (req.isAuthenticated()) {
     return true
   }
 }

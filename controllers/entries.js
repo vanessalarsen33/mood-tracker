@@ -44,7 +44,7 @@ function deleteEntry(req, res) {
 
 function index(req, res) {
   console.log(req.body.mood);
-  Entry.find({ user: req.user }).populate('customMoods').exec( function (err, entries) {
+  Entry.find({ user: req.user }).populate('customMoods').exec(function (err, entries) {
     res.render('entries/index', {
       title: 'All Entries',
       entries
@@ -71,18 +71,18 @@ function editForm(req, res) {
 }
 
 function editForm(req, res) {
-  Entry.findById(req.params.id, function(err, entryToEditDB) {
-          res.render('entries/edit', {
-              title: 'Edit Entry',
-              entry: entryToEditDB,
-            
-          })
-      })
-  }
+  Entry.findById(req.params.id, function (err, entryToEditDB) {
+    res.render('entries/edit', {
+      title: 'Edit Entry',
+      entry: entryToEditDB,
+
+    })
+  })
+}
 
 function updateEntry(req, res) {
-  Entry.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, updatedEntryDb) {
-      res.redirect('/entries/index');
+  Entry.findByIdAndUpdate(req.params.id, req.body, { new: true }, function (err, updatedEntryDb) {
+    res.redirect('/entries/index');
   })
 }
 
