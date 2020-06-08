@@ -243,6 +243,9 @@ text-align: center;
   display: flex;
   margin: auto;
 }
+#message-text {
+  color: #46494C;
+}
 
 #deleteBtn {
   background-color: #F7E1D7;
