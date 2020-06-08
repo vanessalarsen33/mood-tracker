@@ -13,6 +13,7 @@ module.exports = {
 
 function createEntry(req, res) {
   req.body.user = req.user
+  console.log(req.body.sleep)
   if (typeof req.body.moods !== 'string') {
     req.body.moods = req.body.moods.map(function (mood) {
       return {
@@ -22,6 +23,7 @@ function createEntry(req, res) {
   }
   const entry = new Entry(req.body);
   entry.note = req.body.note
+  entry.sleep = req.body.sleep
   entry.save(function (err, newEntry) {
     res.redirect('/entries/index');
   });
@@ -34,6 +36,10 @@ function deleteEntry(req, res) {
 }
 
 function index(req, res) {
+  Mood.find({ user: req.user }, function (err, mood) {
+    // console.log(mood, "HEEEEERRREEEE")
+  });
+  console.log(req.body.mood);
   Entry.find({ user: req.user }, function (err, entries) {
     res.render('entries/index', {
       title: 'All Entries',
@@ -60,7 +66,6 @@ function editForm(req, res) {
   })
 }
 
-// Define getEditBookForm (our edit route)
 function editForm(req, res) {
   Entry.findById(req.params.id, function(err, entryToEditDB) {
           res.render('entries/edit', {
@@ -71,9 +76,7 @@ function editForm(req, res) {
       })
   }
 
-// Define updateOneBook (our update route)
 function updateEntry(req, res) {
-  console.log("!!!!!!!")
   Entry.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, updatedEntryDb) {
       res.redirect('/entries/index');
   })

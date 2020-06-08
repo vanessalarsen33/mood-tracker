@@ -8,59 +8,51 @@
     <i class="small material-icons">perm_identity</i>
     <% } %>
 </div>
-<tbody>
+<div class="entryCard">
   <% if (user) { %>
   <% entries.forEach(function(e) { %>
-  <div class="card">
+  <div class="card col-md-5">
     <tr>
-      <h4 class="today">DATE</h4>
+      <h4 class="today"><%= e.createdAt.toLocaleDateString() %></h4>
       <h5>Today I felt:</h5>
       <% e.moods.forEach(function(m) { %>
       <td><%= m.mood %></td>
-    </tr><br><br>
+    </tr>
     <tr>
       <% }) %>
+      <h5>How you slept:</h5>
+      <p><%= e.sleep %></p>
       <h5>A few of my thoughts:</h5>
       <td><%= e.note %></td>
-    </tr><br>
+    </tr>
     <div class="entryBtns">
-      <a href='/entries/<%= e._id %>/edit' type="submit" id="editBtn">Edit Entry</a> 
-      <form action="/entries/<%= e._id %>?_method=DELETE" method="POST"><br>
-      <input id="deleteBtn" type="submit" value="DELETE">
+      <button type="button" class="modal-btn" data-toggle="modal" data-target="#exampleModal">Update Journal</button>
+      <form action="/entries/<%= e._id %>?_method=DELETE" method="POST">
+        <input id="deleteBtn" type="submit" value="DELETE">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Journal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="/entries/<%= e._id %>?_method=PUT" method="POST">
+                  <input type="field" name="note" placeholder="<%= e.note %>" value="<%= e.note %>"><br>
+              </div>
+            <div class="modal-footer">
+          <input type="submit" value="Update Entry">
+      </form>
       </form>
     </div>
   </div>
-  <% })}; %>
-</tbody>
-
-    <!-- <button type="button" class="modal-btn" data-toggle="modal" data-target="#exampleModal">EDIT</button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form action="/entries//edit" method="GET">
-                      <div class="form-group">
-                        <label for="message-text" class="col-form-label">Message:</label>
-                        <input class="form-control" id="message-text" name="mood">
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Add</button>
-                  </div>
-                </div>
-              </div> -->
-    <!-- </div> -->
-
-
-
+</div>
+</div>
+</div>
+</div>
+<% })}; %>
 
 <%- include('../partials/footer') %>

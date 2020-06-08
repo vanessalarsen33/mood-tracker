@@ -1,45 +1,45 @@
 <%- include('../partials/header') %>
-
-<h2>How are you feeling today?</h2>
+<h1 class="entryTitle">New Entry</h1>
+<h2>How are you feeling today <%= user.name %>?</h2>
 
 <form id="new-entry" action="/entries/index " method="POST">
-  <div class="checkboxes">
-    <div class="checkbox">
+  <div class="checkboxes container">
+    <div class="checkbox col-md-3 col-sm-6">
       <label class="checkbox-label">
         <input type="checkbox" id="emotion1" name="moods" value="Happy">
         <span class="checkbox-custom rectangular"></span>
       </label>
       <div class="input-title">HAPPY</div>
     </div>
-    <div class="checkbox">
+    <div class="checkbox col-md-3 col-sm-6">
       <label class="checkbox-label">
         <input type="checkbox" id="emotion1" name="moods" value="Anxious">
         <span class="checkbox-custom rectangular"></span>
       </label>
       <div class="input-title">ANXIOUS</div>
     </div>
-    <div class="checkbox">
+    <div class="checkbox col-md-3 col-sm-6">
       <label class="checkbox-label">
         <input type="checkbox" id="emotion1" name="moods" value="Motivated">
         <span class="checkbox-custom rectangular"></span>
       </label>
       <div class="input-title">MOTIVATED</div>
     </div>
-    <div class="checkbox">
+    <div class="checkbox col-md-3 col-sm-6">
       <label class="checkbox-label">
         <input type="checkbox" id="emotion1" name="moods" value="Stressed">
         <span class="checkbox-custom rectangular"></span>
       </label>
       <div class="input-title">STRESSED</div>
     </div>
-    <div class="checkbox">
+    <div class="checkbox col-md-3 col-sm-6">
       <label class="checkbox-label">
         <input type="checkbox" id="emotion1" name="moods" value="Overwhelmed">
         <span class="checkbox-custom rectangular"></span>
       </label>
       <div class="input-title">OVERWHELMED</div>
     </div>
-    <div class="checkbox">
+    <div class="checkbox col-md-3 col-sm-6">
       <label class="checkbox-label">
         <input type="checkbox" id="emotion1" name="moods" value="Sad">
         <span class="checkbox-custom rectangular"></span>
@@ -48,8 +48,8 @@
     </div>
     <%if (customMoods.length) { %>
     <% customMoods.forEach(function(m) { %>
-    <div class="checkbox">
-      <label class="checkbox-label">
+      <div class="checkbox col-md-3 col-sm-6">
+        <label class="checkbox-label">
         <input type="checkbox" id="emotion1" name="addMoods" value="<%= m.mood %>">
         <span class="checkbox-custom rectangular"></span>
       </label>
@@ -58,14 +58,26 @@
     <% }); %>
     <% } %>
   </div>
+  <button type="button" class="modal-btn" data-toggle="modal" data-target="#exampleModal">Add Mood</button>
+  <h3>How did you sleep last night?</h3>
+  <div class="sleep">
+    <p>Poor</p>
+    <p>Good</p>
+  </div>
+  <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange" name="sleep">
+  </div>
   <h3>Journal about your day</h3>
   <div class="journal-form">
-    <input class="journal" type="text" name="note">
-    <input class="form-btn" type="submit" value="Sumbit Entry">
+    <div class>
+      <input class="journal" type="text" name="note">
+    </div>
+    <div>
+      <input class="form-btn" type="submit" value="Sumbit Entry">
+    </div>
   </div>
 </form>
 <!-- <a href="../moods/new">Add Another Emotion</a> -->
-<button type="button" class="modal-btn" data-toggle="modal" data-target="#exampleModal">Add Mood</button>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
