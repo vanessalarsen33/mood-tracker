@@ -4,23 +4,27 @@ This is app is a way that you can track your feeling and put notes in about your
 
 ## Screenshots
 
-
+![image](/images/img1.png)
+![image2](/images/img2.png)
 
 ## Technologies
 
--- NodeJS
--- ExpressJS
--- MongoDB
--- Mongoose
--- EJS
--- Bootstrap
+- NodeJS
+- ExpressJS
+- MongoDB
+- Mongoose
+- EJS
+- Bootstrap
 
 ## Getting Started
 
-deployed link(https://git.heroku.com/mood-track.git)
-trello planning board(https://trello.com/b/jabDID3l/mood-app)
+Deployed [app](https://mood-track.herokuapp.com/) with Heroku.
+
+Trello planning [board](https://trello.com/b/jabDID3l/mood-app)
 
 
 ## Next Steps
 
--- Add scale tracker for each mood.
+- Add scale tracker for each mood.
+- Update CSS
+- UI with sleep scale
