@@ -1,6 +1,6 @@
 # Mood Tracker
 
-<img src="/images/logo.png" width=300 display=center/>
+<img src="/images/logo.png" width=300 text-align=center/>
 
 
 This is app is a way that you can track your feeling and put notes in about your day. An easy way to be able to see trends on how you are feeling. 
