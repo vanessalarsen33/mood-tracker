@@ -25,7 +25,7 @@ function createEntry(req, res) {
       mood: req.body.moods
     }]
   }
-  if (typeof req.body.customMoods !== 'object') {
+  if (req.body.customMoods && typeof req.body.customMoods !== 'object') {
     req.body.customMoods = [req.body.customMoods]
   }
   const entry = new Entry(req.body);
@@ -43,8 +43,8 @@ function deleteEntry(req, res) {
 }
 
 function index(req, res) {
-  console.log(req.body.mood);
   Entry.find({ user: req.user }).populate('customMoods').exec(function (err, entries) {
+    console.log(entries);
     res.render('entries/index', {
       title: 'All Entries',
       entries
