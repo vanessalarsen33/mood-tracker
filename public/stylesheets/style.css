@@ -4,11 +4,13 @@ body {
   color: #F7E1D7;
   margin: 0;
 }
+
 .jumbotron {
   margin: 0 4.8em 0;
   padding: 0;
   background-color: #93A8AC;
 }
+
 .btn-primary {
   margin: 3% auto;
   justify-content: center;
