@@ -127,15 +127,15 @@ button {
 }
 
 .checkbox-label .checkbox-custom {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 34px;
-    width: 34px;
-    background-color: transparent;
-    border-radius: 5px;
-    transition: all 0.3s ease-out;
-    border: 2px solid #F7E1D7;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 34px;
+  width: 34px;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+  border: 2px solid #F7E1D7;
 }
 
 .checkbox-label input:checked ~ .checkbox-custom {
