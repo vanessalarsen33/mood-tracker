@@ -107,6 +107,7 @@ button {
   text-align: left;
   padding: 40px 0px;
 }
+
 .checkbox-label {
   display: block;
   position: relative;
@@ -242,7 +243,6 @@ text-align: center;
   padding: .5%;
   margin: 2% 40% 1%;
   height: 219px;
-
 }
 
 .profile-img {
