@@ -16,12 +16,12 @@
       <h4 class="today"><%= e.createdAt.toLocaleDateString() %></h4>
       <h5>Today I felt:</h5>
       <td>
-    <% if (e.moods.legnth) { %>
+    <% if (e.moods.length) { %>
       <% e.moods.forEach(function(m) { %>
          <%= m.mood %>
       <% }) %>
       <% } %>
-    <% if (e.customMoods.legnth) { %>
+    <% if (e.customMoods.length) { %>
         <% e.customMoods.forEach(function(m) { %>
       <%= m.mood %>
       <% }) %>
