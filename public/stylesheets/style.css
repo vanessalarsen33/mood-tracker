@@ -262,6 +262,7 @@ text-align: center;
   display: flex;
   margin: auto;
 }
+
 #message-text {
   color: grey;
 }
