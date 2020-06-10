@@ -4,7 +4,7 @@
     <% if(user.avatar) { %>
       <img  class="profile-img" src="<%= user.avatar %>">
       <% } else { %>
-        <i class="small material-icons">perm_identity</i>
+        <i class="small material-icons"></i>
       <% } %>
     <span class="profile"><%= user.name %></span>
 </div>
@@ -16,12 +16,16 @@
       <h4 class="today"><%= e.createdAt.toLocaleDateString() %></h4>
       <h5>Today I felt:</h5>
       <td>
+    <% if (e.moods.legnth) { %>
       <% e.moods.forEach(function(m) { %>
+         <%= m.mood %>
+      <% }) %>
+      <% } %>
+    <% if (e.customMoods.legnth) { %>
+        <% e.customMoods.forEach(function(m) { %>
       <%= m.mood %>
       <% }) %>
-      <% e.customMoods.forEach(function(m) { %>
-      <%= m.mood %>
-      <% }) %>
+      <% } %>
       </td>
     </tr>
     <tr>
