@@ -125,6 +125,7 @@ button {
   opacity: 0;
   cursor: pointer;
 }
+
 .checkbox-label .checkbox-custom {
     position: absolute;
     top: 0px;
